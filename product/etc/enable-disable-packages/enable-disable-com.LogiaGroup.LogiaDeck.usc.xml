@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.LogiaGroup.LogiaDeck" carrierBased="true" default_action="disable">
+        <criteria action="enable" channel="usc"/>
+        <criteria action="enable" channel="vzw"/>
+        <criteria action="enable" channel="vzwpre"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2017 Motorola Mobility Inc.
+     All Rights Reserved.
+     Motorola Mobility Confidential Restricted.
+-->
+<permissions>
+    <privapp-permissions package="com.motorola.setupwizard.phoneservice">
+        <!-- System defined permissions (alphabetical) -->
+        <permission name="android.permission.INVOKE_CARRIER_SETUP" />
+        <permission name="android.permission.MODIFY_PHONE_STATE" />
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+</permissions>

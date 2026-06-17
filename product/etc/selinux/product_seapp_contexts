@@ -1,0 +1,17 @@
+user=_app isPrivApp=true name=com.thundercomm.ar.core domain=arcore_app type=privapp_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common domain=moto_stylus_app name=com.motorola.stylus type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common domain=moto_stylus_app name=com.motorola.stylus.* type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common domain=moto_stylus_app name=com.motorola.stylus:* type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common domain=moto_gamemode_app name=com.motorola.gamemode type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common2 domain=moto_gamemode_app name=com.motorola.gamemode type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common2 domain=moto_tfrsu_app name=com.motorola.tracfone.rsu type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common2 domain=moto_tfrsu_app name=com.motorola.tracfone.rsu.* type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common2 domain=moto_tfrsu_app name=com.motorola.tracfone.rsu:* type=app_data_file levelFrom=user
+user=_app isPrivApp=false seinfo=common2 domain=moto_audiorecorder_app name=com.motorola.audiorecorder type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common2 domain=moto_ai_app name=com.motorola.aiservices type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common2 domain=moto_spaces_app name=com.motorola.spaces type=app_data_file levelFrom=user
+user=_app isPrivApp=false seinfo=common domain=moto_smartconnect_app name=com.motorola.mobiledesktop type=app_data_file levelFrom=user
+user=_app isPrivApp=false seinfo=common2 domain=moto_smartconnect_app name=com.motorola.mobiledesktop type=app_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common domain=moto_smartconnect_app name=com.motorola.mobiledesktop type=privapp_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=common2 domain=moto_smartconnect_app name=com.motorola.mobiledesktop type=privapp_data_file levelFrom=user
+user=_app seinfo=platform isPrivApp=true domain=moto_sar_app name=com.motorola.sarcontrol type=app_data_file levelFrom=user

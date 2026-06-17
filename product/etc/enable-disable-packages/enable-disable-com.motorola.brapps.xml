@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.motorola.brapps" default_action="disable" version="1">
+        <criteria action="disable" business_edition="1" />
+        <criteria action="enable" channel="timbr;tefbr;openmx" />
+    </package-disable-enable-criteria>
+</enable-disable-package>

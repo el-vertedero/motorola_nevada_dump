@@ -1,0 +1,6 @@
+<config>
+    <!-- Allow BatteryTracer to be sideloaded -->
+    <allow-package-shareduid package="com.motorola.tools.batterytracer" shareduid="android.uid.system" />
+    <!-- Also allow Moto Stats which will replace battery tracer soon, meanwhile, working in parallel -->
+    <allow-package-shareduid package="com.motorola.moto_stats" shareduid="android.uid.system" />
+</config>

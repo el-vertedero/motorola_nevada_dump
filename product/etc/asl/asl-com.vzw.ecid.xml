@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<bundle>
+    <long name="version" value="2" />
+    <pbundle_as_map name="safety_labels">
+        <long name="version" value="1" />
+        <pbundle_as_map name="data_labels">
+            <pbundle_as_map name="data_collected">
+                <pbundle_as_map name="personal">
+                    <pbundle_as_map name="name">
+                        <int-array name="purposes" num="1">
+                            <item value="1" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="true" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                    <pbundle_as_map name="phone_number">
+                        <int-array name="purposes" num="3">
+                            <item value="1" />
+                            <item value="4" />
+                            <item value="7" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="false" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                </pbundle_as_map>
+                <pbundle_as_map name="email_text_message">
+                    <pbundle_as_map name="text_messages">
+                        <int-array name="purposes" num="3">
+                            <item value="1" />
+                            <item value="2" />
+                            <item value="7" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="false" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                </pbundle_as_map>
+                <pbundle_as_map name="identifiers">
+                    <pbundle_as_map name="other">
+                        <int-array name="purposes" num="3">
+                            <item value="1" />
+                            <item value="2" />
+                            <item value="7" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="false" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                </pbundle_as_map>
+                <pbundle_as_map name="photo_video">
+                    <pbundle_as_map name="photos">
+                        <int-array name="purposes" num="1">
+                            <item value="1" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="true" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                </pbundle_as_map>
+                <pbundle_as_map name="actions_in_app">
+                    <pbundle_as_map name="user_interaction">
+                        <int-array name="purposes" num="2">
+                            <item value="2" />
+                            <item value="3" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="false" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                    <pbundle_as_map name="user_generated_content">
+                        <int-array name="purposes" num="2">
+                            <item value="1" />
+                            <item value="2" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="false" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                </pbundle_as_map>
+                <pbundle_as_map name="app_performance">
+                    <pbundle_as_map name="crash_logs">
+                        <int-array name="purposes" num="1">
+                            <item value="2" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="false" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                    <pbundle_as_map name="performance_diagnostics">
+                        <int-array name="purposes" num="1">
+                            <item value="2" />
+                        </int-array>
+                        <boolean name="is_collection_optional" value="false" />
+                        <boolean name="ephemeral" value="false" />
+                    </pbundle_as_map>
+                </pbundle_as_map>
+            </pbundle_as_map>
+            <pbundle_as_map name="data_shared">
+                <pbundle_as_map name="email_text_message">
+                    <pbundle_as_map name="text_messages">
+                        <int-array name="purposes" num="3">
+                            <item value="1" />
+                            <item value="2" />
+                            <item value="7" />
+                        </int-array>
+                    </pbundle_as_map>
+                </pbundle_as_map>
+            </pbundle_as_map>
+        </pbundle_as_map>
+        <pbundle_as_map name="security_labels">
+            <boolean name="is_data_deletable" value="true" />
+            <boolean name="is_data_encrypted" value="true" />
+        </pbundle_as_map>
+    </pbundle_as_map>
+    <pbundle_as_map name="transparency_info">
+        <pbundle_as_map name="developer_info">
+            <pbundle_as_map name="developer_0">
+                <string name="name" value="Verizon Consumer Group" />
+                <string name="email" value="callfilter@verizonwireless.com" />
+                <string name="address" value="One Verizon Way, Basking Ridge, New Jersey" />
+                <string name="country_region" value="US" />
+                <string name="app_registry" value="com.android.vending" />
+                <string name="app_registry_id" value="https://play.google.com/store/apps/developer?id=Verizon+Consumer+Group" />
+            </pbundle_as_map>
+        </pbundle_as_map>
+        <pbundle_as_map name="app_info">
+            <string name="title" value="Verizon Call Filter" />
+            <string name="description" value="Your phone is your door to the world, and you shouldn't open it for just anyone. With Call Filter, you can screen incoming calls, auto-block spam and report any unwanted numbers. Or, upgrade to Call Filter Plus with Caller ID for added security. Put a name to the unknown numbers, make your own personal block list, and even assess the risk level of incoming calls. Enroll today and start answering with confidence." />
+            <boolean name="contains_ads" value="false" />
+            <string name="privacy_policy" value="https://www.verizon.com/about/privacy/full-privacy-policy" />
+            <string name="category" value="Communications" />
+            <pbundle_as_map name="contact_info">
+                <string name="email" value="callfilter@verizonwireless.com" />
+                <string name="website" value="https://www.verizonwireless.com/solutions-and-services/caller-name-id/" />
+            </pbundle_as_map>
+        </pbundle_as_map>
+    </pbundle_as_map>
+</bundle>

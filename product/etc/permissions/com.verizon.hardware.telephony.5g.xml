@@ -1,0 +1,5 @@
+<!-- This is the standard set of telephony features for a 5G capable phone. -->
+
+<permissions>
+    <feature name="com.verizon.hardware.telephony.5g"/>
+</permissions>

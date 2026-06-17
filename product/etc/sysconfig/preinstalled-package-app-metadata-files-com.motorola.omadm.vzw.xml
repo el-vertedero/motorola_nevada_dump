@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <asl-file package="com.motorola.omadm.vzw" path="/product/etc/asl/asl_com.motorola.omadm.vzw.xml"/>
+</config>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preinstall-package>
+    <module name="facebook-messenger" action="install" channel="amxcl;amxco;amxpe;amxla;amxmx;amxbr;amxar"/>
+</preinstall-package>

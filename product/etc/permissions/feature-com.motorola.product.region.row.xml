@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (C) 2025 Motorola Mobility LLC.
+ All rights reserved.
+ Motorola Confidential Restricted.
+-->
+<permissions>
+    <feature name="com.motorola.product.region.row" />
+</permissions>

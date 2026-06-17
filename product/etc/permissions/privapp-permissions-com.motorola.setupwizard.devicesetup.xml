@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2017 Motorola Mobility Inc.
+     All Rights Reserved.
+     Motorola Mobility Confidential Restricted.
+-->
+<permissions>
+    <privapp-permissions package="com.motorola.setupwizard.devicesetup">
+        <!-- System defined permissions (alphabetical) -->
+        <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+</permissions>
+

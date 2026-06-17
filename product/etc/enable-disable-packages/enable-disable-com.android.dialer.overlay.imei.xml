@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2024 Motorola Mobility, Inc. All Rights Reserved -->
+<enable-disable-package>
+    <package-disable-enable-criteria
+            default_action="disable"
+            package="com.android.dialer.overlay.imei">
+        <criteria action="enable" channel="att"
+            prop="ro.product.device"
+            prop_value="aito;arcfox"/>
+        <criteria action="enable" channel="boost"
+            prop="ro.product.device"
+            prop_value="aito;avatrn;boston"/>
+        <criteria action="enable" channel="cc"
+            prop="ro.product.device"
+            prop_value="aito"/>
+        <criteria action="enable" channel="cricket"
+            prop="ro.product.device"
+            prop_value="aito"/>
+        <criteria action="enable" channel="fi"
+            prop="ro.product.device"
+            prop_value="aito;avatrn;boston"/>
+        <criteria action="enable" channel="retca"
+            prop="ro.product.device"
+            prop_value="aito;arcfox"/>
+        <criteria action="enable" channel="retus"
+            prop="ro.product.device"
+            prop_value="arcfox"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

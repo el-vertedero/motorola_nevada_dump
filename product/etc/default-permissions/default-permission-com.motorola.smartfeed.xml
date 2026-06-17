@@ -1,0 +1,6 @@
+<exceptions>
+    <exception package="com.motorola.smartfeed">
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false" />
+        <permission name="android.permission.READ_CONTACTS" fixed="false" />
+    </exception>
+</exceptions>

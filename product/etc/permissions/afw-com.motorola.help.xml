@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <disallowed-managed-profile package="com.motorola.help"/>
+    <disallowed-managed-device package="com.motorola.help"/>
+    <disallowed-managed-user package="com.motorola.help"/>
+</config>

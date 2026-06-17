@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <asl-file package="com.aura.news.hashtag.news" path="/product/etc/asl/asl_com.aura.news.hashtag.news.xml"/>
+</config>

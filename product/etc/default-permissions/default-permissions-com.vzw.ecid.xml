@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<exceptions>
+    <exception
+        package="com.vzw.ecid"
+        sha256-cert-digest="E6:7A:0E:B0:76:4E:C3:28:B7:C1:1B:1B:D0:84:28:A6:16:D9:F3:EB:B0:20:A7:D8:DF:14:72:81:4C:13:F3:C9">
+
+        <!-- android.permission.group.PHONE -->
+        <permission name="android.permission.READ_PHONE_STATE" fixed="false" />
+        <permission name="android.permission.READ_CALL_LOG" fixed="false" />
+        <permission name="android.permission.PROCESS_OUTGOING_CALLS" fixed="false" />
+        <permission name="android.permission.CALL_PHONE" fixed="false" />
+
+        <!-- android.permission.group.SMS -->
+        <permission name="android.permission.RECEIVE_SMS" fixed="false" />
+        <permission name="android.permission.SEND_SMS" fixed="false" />
+
+        <!-- android.permission.group.CONTACTS -->
+        <permission name="android.permission.READ_CONTACTS" fixed="false" />
+        <permission name="android.permission.WRITE_CONTACTS" fixed="false" />
+
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+
+    </exception>
+</exceptions>

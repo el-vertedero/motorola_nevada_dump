@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+      Copyright (C) 2025 Motorola Mobility LLC,
+      All Rights Reserved.
+      Motorola Mobility Confidential Restricted.
+-->
+<permissions>
+    <!-- Feature for supported products. -->
+    <feature name="com.motorola.software.iotservice.v1"/>
+    <!-- Feature to indicate the presence of the hidden API and Bluetooth Privileged Permission. -->
+    <feature name="com.motorola.software.iotservice.v2"/>
+</permissions>

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+/* Copyright (c) 2017-2020 Qualcomm Technologies, Inc.
+ * All Rights Reserved.
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ */
+-->
+
+<!--Ids are used in identifying the boosts, increment ids linearly,
+    do not modify Ids, or add in between-->
+<!--follow the number format rules while specifying number, can be given
+    in any format-->
+
+<BoostConfigs version="1">
+    <thermal-sensor>BACK_TEMP</thermal-sensor>
+    <thermal-threshold>47</thermal-threshold>
+    <config-scroll-whitelist name="com.facebook.katana" Resources="0x00c00000, 0" />
+    <!--Note:
+          1. fps: Need add config for all supported fps, fps please use int value.
+                If not need to set fps, please set fps to -1 in BootOptConfig.java
+
+          2. hintname: default name was hintId_109, hintId_110, the hintIds are defined in com.motorola.perf.MotoPerfManager
+                        You can change the name in BootOptConfig.java-->
+
+    <PerfBoost>
+        <!--        heaviest scroll boost        -->
+        <!--
+        PERF_RES_CPUFREQ_MIN_CLUSTER_0                   = 0x00400000,
+        PERF_RES_CPUFREQ_MIN_CLUSTER_1                   = 0x00400100,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_0                   = 0x00404000,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_1                   = 0x00404100,
+        PERF_RES_SCHED_UCLAMP_MIN_TA                     = 0x01408300,
+        PERF_RES_SCHED_PREFER_IDLE_TA                    = 0x01404300,
+        PERF_RES_DRAM_OPP_MIN                            = 0x01000000,
+        PERF_RES_GPU_FREQ_MIN                            = 0x00c00000,
+        -->
+        <Config
+            hintname="hintId_scrollBoost"  fps="30" subType="205"
+            Resources="0x00400000, 1800000,
+            0x00400100, 2200000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="60" subType="205"
+            Resources="0x00400000, 1900000,
+            0x00400100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="90" subType="205"
+            Resources="0x00400000, 1900000,
+            0x00400100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="120" subType="205"
+            Resources="0x00400000, 1900000,
+            0x00400100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+
+        <!--        medium scroll boost        -->
+        <!--
+        PERF_RES_CPUFREQ_MIN_CLUSTER_0                   = 0x00400000,
+        PERF_RES_CPUFREQ_MIN_CLUSTER_1                   = 0x00400100,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_0                   = 0x00404000,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_1                   = 0x00404100,
+        PERF_RES_SCHED_UCLAMP_MIN_TA                     = 0x01408300,
+        PERF_RES_SCHED_PREFER_IDLE_TA                    = 0x01404300,
+        PERF_RES_DRAM_OPP_MIN                            = 0x01000000,
+        PERF_RES_GPU_FREQ_MIN                            = 0x00c00000,
+        -->
+        <Config
+            hintname="hintId_scrollBoost"  fps="30" subType="208"
+            Resources="0x00400000, 1700000,
+            0x00400100, 1800000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="60" subType="208"
+            Resources="0x00400000, 1700000,
+            0x00400100, 1800000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="90" subType="208"
+            Resources="0x00400000, 1700000,
+            0x00400100, 1800000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="120" subType="208"
+            Resources="0x00400000, 1700000,
+            0x00400100, 1800000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+
+        <!--        vertical scroll boost        -->
+        <!--        TODO: No FPS in java code        -->
+        <!--
+        PERF_RES_CPUFREQ_MIN_CLUSTER_0                   = 0x00400000,
+        PERF_RES_CPUFREQ_MIN_CLUSTER_1                   = 0x00400100,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_0                   = 0x00404000,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_1                   = 0x00404100,
+        PERF_RES_SCHED_UCLAMP_MIN_TA                     = 0x01408300,
+        PERF_RES_SCHED_PREFER_IDLE_TA                    = 0x01404300,
+        PERF_RES_DRAM_OPP_MIN                            = 0x01000000,
+        PERF_RES_GPU_FREQ_MIN                            = 0x00c00000,
+        -->
+
+        <Config
+            hintname="hintId_scrollBoost"  subType="201"
+            Resources="0x00400000, 1500000,
+            0x00400100, 1700000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1,
+            0x00c00000, 2" />
+        <!--        Horizontal scroll boost        -->
+        <!--        TODO: No FPS in java code        -->
+        <Config
+            hintname="hintId_scrollBoost"  subType="202"
+            Resources="0x00400000, 1500000,
+            0x00400100, 1700000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1,
+            0x00c00000, 2" />
+        <!--        Prefling scroll boost        -->
+        <!--        Note: Must set timeout for Prefling scroll boost     -->
+        <!--        TODO: No FPS in java code        -->
+        <Config
+            hintname="hintId_scrollBoost" timeout="100" subType="204"
+            Resources="0x00400000, 1500000,
+            0x00400100, 1700000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        key boost        -->
+        <Config
+            hintname="hintId_keyBoost" subType="4" timeout="450"
+            Resources="0x00400000, 1900000,
+            0x00400100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_keyBoost" subType="3" timeout="500"
+            Resources="0x00400000, 1900000,
+            0x00400100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_keyBoost" subType="26" timeout="300"
+            Resources="0x00400000, 1900000,
+            0x00400100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        extend app launch boost        -->
+        <Config
+            hintname="hintId_117" subType="101"
+            Resources="0x00400000, 1900000,
+            0x00400100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        early app launch boost        -->
+        <Config
+            hintname="hintId_106" subType="106" timeout="300"
+            Resources="0x00400000, 2000000,
+            0x00400100, 2400000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        interaction boost        -->
+        <Config
+            hintname="hintId_118" timeout="100"
+            Resources="0x00400000, 1000000,
+            0x00400100, 900000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--      boost for opening files from launcher       -->
+        <Config
+            hintname="hintId_120" timeout="1000"
+            Resources="0x00400000, 1600000,
+            0x00400100, 1600000,
+            0x00c00000, 2" />
+        <!--      boost for scrolling to -1 screen from launcher       -->
+        <Config
+            hintname="hintId_5" timeout="2000"
+            Resources="0x00400000, 1800000,
+            0x00400100, 2000000" />
+        <!--      boost for screenshot       -->
+        <Config
+            hintname="hintId_145" timeout="2000"
+            Resources="0x00400000, 1800000,
+            0x00400100, 2000000" />
+        <!--      boost for expanding notificationshade       -->
+        <Config
+            hintname="hintId_130" timeout="2000"
+            Resources="0x00400000, 2000000,
+            0x00400100, 2400000,
+            0x01408300, 40,
+            0x00c00000, 2" />
+        <!--      boost for scrolling in notificationshade       -->
+        <Config
+            hintname="hintId_131" timeout="3000"
+            Resources="0x00400000, 2000000,
+            0x00400100, 2400000,
+            0x01408300, 40,
+            0x00c00000, 2" />
+        <!--      extra boost for notificationshade scroll       -->
+        <Config
+            hintname="hintId_146" timeout="500"
+            Resources="0x00400000, 2000000,
+            0x00400100, 2400000,
+            0x01408300, 40,
+            0x00c00000, 2" />
+        <!--      boost for touch in notificationshade       -->
+        <Config
+            hintname="hintId_135" timeout="3000"
+            Resources="0x00400000, 2000000,
+            0x00400100, 2400000,
+            0x01408300, 40,
+            0x00c00000, 2" />
+    </PerfBoost>
+
+    <PerfBoostBreakThermal>
+        <!--        heaviest scroll boost        -->
+        <!--
+        PERF_RES_CPUFREQ_MIN_HL_CLUSTER_0                = 0x00408000,
+        PERF_RES_CPUFREQ_MIN_HL_CLUSTER_1                = 0x00408100,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_0                   = 0x00404000,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_1                   = 0x00404100,
+        PERF_RES_SCHED_UCLAMP_MIN_TA                     = 0x01408300,
+        PERF_RES_SCHED_PREFER_IDLE_TA                    = 0x01404300,
+        PERF_RES_DRAM_OPP_MIN                            = 0x01000000,
+        PERF_RES_GPU_FREQ_MIN                            = 0x00c00000,
+        -->
+        <Config
+            hintname="hintId_scrollBoost"  fps="30" subType="205"
+            Resources="0x00408000, 1800000,
+            0x00408100, 2200000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="60" subType="205"
+            Resources="0x00408000, 1800000,
+            0x00408100, 2200000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="90" subType="205"
+            Resources="0x00408000, 1800000,
+            0x00408100, 2200000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="120" subType="205"
+            Resources="0x00408000, 1900000,
+            0x00408100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        medium scroll boost        -->
+        <!--
+        PERF_RES_CPUFREQ_MIN_HL_CLUSTER_0                = 0x00408000,
+        PERF_RES_CPUFREQ_MIN_HL_CLUSTER_1                = 0x00408100,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_0                   = 0x00404000,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_1                   = 0x00404100,
+        PERF_RES_SCHED_UCLAMP_MIN_TA                     = 0x01408300,
+        PERF_RES_SCHED_PREFER_IDLE_TA                    = 0x01404300,
+        PERF_RES_DRAM_OPP_MIN                            = 0x01000000,
+        PERF_RES_GPU_FREQ_MIN                            = 0x00c00000,
+        -->
+
+        <Config
+            hintname="hintId_scrollBoost"  fps="30" subType="208"
+            Resources="0x00408000, 1700000,
+            0x00408100, 1800000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="60" subType="208"
+            Resources="0x00408000, 1700000,
+            0x00408100, 1800000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="90" subType="208"
+            Resources="0x00408000, 1700000,
+            0x00408100, 1800000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_scrollBoost"  fps="120" subType="208"
+            Resources="0x00408000, 1700000,
+            0x00408100, 1800000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        vertical scroll boost        -->
+        <!--        TODO: No FPS in java code        -->
+        <!--
+        PERF_RES_CPUFREQ_MIN_HL_CLUSTER_0                = 0x00408000,
+        PERF_RES_CPUFREQ_MIN_HL_CLUSTER_1                = 0x00408100,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_0                   = 0x00404000,
+        PERF_RES_CPUFREQ_MAX_CLUSTER_1                   = 0x00404100,
+        PERF_RES_SCHED_UCLAMP_MIN_TA                     = 0x01408300,
+        PERF_RES_SCHED_PREFER_IDLE_TA                    = 0x01404300,
+        PERF_RES_DRAM_OPP_MIN                            = 0x01000000,
+        PERF_RES_GPU_FREQ_MIN                            = 0x00c00000,
+        -->
+
+        <Config
+            hintname="hintId_scrollBoost"  subType="201"
+            Resources="0x00408000, 1500000,
+            0x00408100, 1700000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1,
+            0x00c00000, 2" />
+        <!--        Horizontal scroll boost        -->
+        <!--        TODO: No FPS in java code        -->
+        <Config
+            hintname="hintId_scrollBoost"  subType="202"
+            Resources="0x00408000, 1500000,
+            0x00408100, 1700000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1,
+            0x00c00000, 2" />
+        <!--        Prefling scroll boost        -->
+        <!--        Note: Must set timeout for Prefling scroll boost     -->
+        <!--        TODO: No FPS in java code        -->
+        <Config
+            hintname="hintId_scrollBoost" timeout="100" subType="204"
+            Resources="0x00408000, 1500000,
+            0x00408100, 1700000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        key boost        -->
+        <Config
+            hintname="hintId_keyBoost" subType="4" timeout="450"
+            Resources="0x00408000, 1900000,
+            0x00408100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1,
+            0x01000000, 0,
+            0x00c00000, 0" />
+        <Config
+            hintname="hintId_keyBoost" subType="3" timeout="500"
+            Resources="0x00408000, 1900000,
+            0x00408100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <Config
+            hintname="hintId_keyBoost" subType="26" timeout="300"
+            Resources="0x00408000, 1900000,
+            0x00408100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        extend app launch boost        -->
+        <Config
+            hintname="hintId_117" subType="101"
+            Resources="0x00408000, 1900000,
+            0x00408100, 2300000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--        early app launch boost        -->
+        <Config
+            hintname="hintId_106" subType="106" timeout="300"
+            Resources="0x00408000, 2000000,
+            0x00408100, 2400000,
+            0x00404000, 3000000,
+            0x00404100, 3000000,
+            0x01408300, 40,
+            0x01404300, 1" />
+        <!--      boost for opening files from launcher       -->
+        <Config
+            hintname="hintId_120" timeout="1000"
+            Resources="0x00408000, 1600000,
+            0x00408100, 1600000,
+            0x00c00000, 2" />
+        <!--      boost for scrolling to -1 screen from launcher       -->
+        <Config
+            hintname="hintId_5" timeout="2000"
+            Resources="0x00408000, 1800000,
+            0x00408100, 2000000" />
+        <!--      boost for screenshot       -->
+        <Config
+            hintname="hintId_145" timeout="2000"
+            Resources="0x00408000, 1800000,
+            0x00408100, 2000000" />
+        <!--      boost for expanding notificationshade       -->
+        <Config
+            hintname="hintId_130" timeout="2000"
+            Resources="0x00408000, 2000000,
+            0x00408100, 2400000,
+            0x01408300, 40,
+            0x00c00000, 2" />
+        <!--      boost for scrolling in notificationshade       -->
+        <Config
+            hintname="hintId_131" timeout="3000"
+            Resources="0x00408000, 2000000,
+            0x00408100, 2400000,
+            0x01408300, 40,
+            0x00c00000, 2" />
+        <!--      boost for touch in notificationshade       -->
+        <Config
+            hintname="hintId_135" timeout="3000"
+            Resources="0x00408000, 2000000,
+            0x00408100, 2400000,
+            0x01408300, 40,
+            0x00c00000, 2" />
+        <!--      extra boost for notificationshade scroll       -->
+        <Config
+            hintname="hintId_146" timeout="500"
+            Resources="0x00408000, 2000000,
+            0x00408100, 2400000,
+            0x01408300, 40,
+            0x00c00000, 2" />
+    </PerfBoostBreakThermal>
+</BoostConfigs>

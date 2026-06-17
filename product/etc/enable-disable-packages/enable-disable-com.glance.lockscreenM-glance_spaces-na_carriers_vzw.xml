@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.glance.lockscreenM" default_action="disable" override_user="true">
+        <criteria action="disable" business_edition="1" />
+        <criteria action="disable" organization_owned="1"/>
+        <criteria action="enable" channel="retus" />
+        <criteria action="enable" channel="spectrum" />
+        <criteria action="enable" channel="fi" />
+        <criteria action="enable" channel="comcast" />
+        <criteria action="enable" channel="cc" />
+        <criteria action="enable" channel="usc" />
+        <criteria action="enable" channel="tracfone" />
+        <criteria action="enable" channel="vzw" />
+        <criteria action="enable" channel="vzwpre" />
+    </package-disable-enable-criteria>
+</enable-disable-package>

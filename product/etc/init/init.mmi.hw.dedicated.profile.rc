@@ -1,0 +1,9 @@
+# Copyright (c) 2024, Motorola Mobility LLC, All Rights Reserved.
+#
+# Motorola Dedicated Hardware profiles Init Script
+
+on post-fs-data && property:ro.mot.hardware.profile=mnotesd
+    setprop ro.mot.enable_motonotes_features false
+
+on post-fs-data
+    setprop ro.mot.enable_motonotes_features true

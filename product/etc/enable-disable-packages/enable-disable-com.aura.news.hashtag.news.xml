@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.aura.news.hashtag.news" systemOnly="false" carrierBased="true" default_action="disable">
+        <criteria action="disable" channel="boost" mccmnc="310240" gid="6440"/>
+        <criteria action="disable" channel="boost" mccmnc="310240" gid="6442"/>
+        <criteria action="disable" channel="boost" mccmnc="313340" gid="8030"/>
+        <criteria action="disable" channel="boost" mccmnc="313340" gid="9030"/>
+        <criteria action="disable" channel="boost" mccmnc="20809" gid="8030"/>
+        <criteria action="disable" channel="boost" mccmnc="20809" gid="9030"/>
+        <criteria action="disable" channel="boost" mccmnc="302220" gid="8030"/>
+        <criteria action="disable" channel="boost" mccmnc="302220" gid="9030"/>
+        <criteria action="enable" channel="boost"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

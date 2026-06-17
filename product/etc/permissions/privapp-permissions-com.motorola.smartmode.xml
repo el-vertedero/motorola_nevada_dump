@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+      Copyright (C) 2023 Motorola Mobility LLC,
+      All Rights Reserved.
+      Motorola Mobility Confidential Restricted.
+-->
+<permissions>
+    <privapp-permissions package="com.motorola.smartmode">
+        <!-- MotoSmartMode privileged permissions -->
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND" />
+        <permission name="android.permission.POWER_SAVER" />
+    </privapp-permissions>
+</permissions>

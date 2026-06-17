@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.google.android.apps.tycho" carrierBased="true" default_action="disable">
+        <criteria action="enable" channel="fi"/>
+        <criteria action="enable" channel="retus" carrier_id="1989" />
+        <criteria action="enable" channel="retus" carrier_id="10014" />
+        <criteria action="enable" channel="retus" carrier_id="10015" />
+        <criteria action="enable" channel="retus" carrier_id="10016" />
+        <criteria action="enable" channel="retus" carrier_id="10017" />
+        <criteria action="enable" channel="retus" carrier_id="10018" />
+        <criteria action="enable" channel="retus" carrier_id="10019" />
+    </package-disable-enable-criteria>
+</enable-disable-package>

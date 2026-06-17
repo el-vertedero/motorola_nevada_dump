@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ Copyright (C) 2021 Motorola Mobility LLC,
+~ All Rights Reserved.
+~ Motorola Mobility Confidential Restricted.
+-->
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.motorola.android.launcher.overlay.retail.global" default_action="enable">
+        <criteria action="disable" channel="retca" mccmnc="302220" gid="4B4F"/>
+        <criteria action="disable" channel="retca" mccmnc="302221" gid="4B4F"/>
+        <criteria action="disable" channel="retca" mccmnc="302220" gid="5455"/>
+        <criteria action="disable" channel="retca" mccmnc="302221" gid="5455"/>
+        <criteria action="disable" channel="att"/>
+        <criteria action="disable" channel="attpre"/>
+        <criteria action="disable" channel="cricket"/>
+        <criteria action="disable" channel="tmo"/>
+        <criteria action="disable" channel="boost"/>
+        <criteria action="disable" channel="comcast"/>
+        <criteria action="disable" channel="vzw"/>
+        <criteria action="disable" channel="vzwpre"/>
+        <criteria action="disable" channel="softbank"/>
+        <criteria action="disable" channel="ymobile"/>
+        <criteria action="disable" channel="kddi"/>
+        <criteria action="disable" channel="tefbr" />
+        <criteria action="disable" channel="vfeu" />
+    </package-disable-enable-criteria>
+</enable-disable-package>

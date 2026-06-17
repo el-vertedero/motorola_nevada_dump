@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.instagram.android" systemOnly="false" default_action="enable">
+        <criteria action="disable" channel="oraeu" sub_channel="orafr"/>
+        <criteria action="disable" channel="oraeu" sub_channel="oraes"/>
+        <criteria action="disable" channel="oraeu" mccmnc="20801" />
+        <criteria action="disable" channel="oraeu" mccmnc="21403" />
+        <criteria action="disable" channel="oraeu" mccmnc="21404" />
+        <criteria action="disable" channel="oraeu" mccmnc="21419" />
+        <criteria action="disable" channel="oraeu" mccmnc="21421" />
+        <criteria action="disable" channel="oraeu" mccmnc="26003" />
+        <criteria action="disable" channel="oraeu" mccmnc="34001" />
+        <criteria action="disable" channel="oraeu" mccmnc="64700" />
+        <criteria action="disable" channel="oraeu" mccmnc="30803" />
+    </package-disable-enable-criteria>
+</enable-disable-package>

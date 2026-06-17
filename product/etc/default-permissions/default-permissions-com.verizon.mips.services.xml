@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<exceptions>
+    <exception
+        package="com.verizon.mips.services"
+        sha256-cert-digest="FF:82:05:0B:F6:BE:D1:F1:52:AC:1A:12:DC:83:CA:CB:AD:40:17:75:16:18:82:87:2C:66:65:FC:5E:15:C8:F2">
+
+    <!-- android.permission.group.PHONE -->
+        <permission name="android.permission.READ_PHONE_STATE" fixed="false" />
+        <permission name="android.permission.CALL_PHONE" fixed="false" />
+        <permission name="android.permission.PROCESS_OUTGOING_CALLS" fixed="false" />
+
+        <!-- android.permission.group.SMS -->
+        <permission name="android.permission.RECEIVE_SMS" fixed="false" />
+        <permission name="android.permission.SEND_SMS" fixed="false" />
+
+        <!-- android.permission.group.LOCATION -->
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="false" />
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false" />
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="false" />
+
+        <permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+    </exception>
+</exceptions>

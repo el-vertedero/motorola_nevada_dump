@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.facebook.services" default_action="disable">
+        <criteria action="disable" channel="att;cricket;tmo"/>
+        <criteria action="disable" prop="persist.app.facebook.partnerid" prop_value="bell:10da79c8-3e56-49b6-9af2-b0a48084dcdd"/>
+        <criteria action="enable" prop="persist.app.facebook.partnerid"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

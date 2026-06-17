@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.android.dialer" default_action="disable" version="1">
+        <criteria action="enable" channel="tmo"/>
+        <criteria action="enable" channel="metropcs"/>
+        <criteria action="enable" channel="att"/>
+        <criteria action="enable_dialer" channel="attpre"/>
+        <criteria action="enable_dialer" channel="cricket"/>
+        <criteria action="enable" channel="vzw"/>
+        <criteria action="enable" channel="vzwpre"/>
+        <criteria action="enable" channel="tracfone" prop="ro.product.device" prop_value="oulu"/>
+        <!-- This criteria may need to be updated when API 40 becomes available. -->
+        <criteria action="enable" channel="tracfone" prop="ro.product.first_api_level" prop_value="36;37;38;39"/>
+        <criteria action="enable" prop="ro.product.device.canonical" prop_value="fuji"/>
+        <criteria action="enable" prop="ro.vendor.mot.hw.lid" prop_value="1"/>
+        <criteria action="enable" prop="ro.vendor.build.motfactory" prop_value="1"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    App optimizations device config
+-->
+<app-optimization version="1">
+
+    <devconfig>
+        <thermal-sensor>BACK_TEMP</thermal-sensor>
+        <profile name="boost1">0x00400000,0x3D0900,0x00400100,0x3D0900,0x00410000,0x1,0x01000000,0x0,0x01404300,0x1,0x01408100,0x64,0x01408300,0x64,0x01438300,0x0,0x01438400,0x0,0x01438600,
+        0xEA60,0x01438700,0xEA60,0x02050000,0x0,0x03000000,0x8,0x03400000,0x3</profile>
+        <profile name="boost2">0x00400000,0x3D0900,0x00400100,0x3D0900,0x00410000,0x1,0x01000000,0x0,0x01404300,0x1,0x01408100,0x64,0x01408300,0x64,0x01438300,0x0,0x01438400,0x0,0x01438600,
+        0xEA60,0x01438700,0xEA60,0x02050000,0x0,0x03000000,0x8,0x03400000,0x3</profile>
+    </devconfig>
+
+    <!-- classified apps -->
+    <optimization name="base_app" mode="normal">
+        <supported-modes>video_mode, video_fullscreen_mode, camera_mode</supported-modes>
+        <default-rr>auto</default-rr>
+        <limit temp="0" tempClr="-20" rr="90"/>
+    </optimization>
+
+    <optimization name="normal_app" parent="base_app"/>
+
+    <!-- apps NOT applicable for autoRR  -->
+    <optimization name="non_autorr_app" mode="normal">
+        <supported-modes>video_mode, video_fullscreen_mode, camera_mode</supported-modes>
+        <limit temp="0" tempClr="-20" rr="90"/>
+    </optimization>
+
+    <optimization name="rr_deep_limit_app" parent="base_app">
+        <default-rr>60</default-rr>
+    </optimization>
+
+    <optimization name="camera_app" parent="rr_deep_limit_app">
+        <limit rr="60"/>
+    </optimization>
+
+    <optimization name="rr_opt_app" parent="base_app">
+    </optimization>
+
+    <optimization name="rr_limit_app" parent="rr_opt_app">
+    </optimization>
+
+    <optimization name="reading_app" parent="rr_opt_app">
+        <idle-fps>30</idle-fps>
+    </optimization>
+
+    <optimization name="navigation_app" parent="rr_deep_limit_app">
+        <idle-fps>30</idle-fps>
+    </optimization>
+
+    <optimization name="rr_deep_opt_app" parent="rr_deep_limit_app">
+        <min-fps>30</min-fps>
+    </optimization>
+
+    <optimization name="low_latency_app" parent="base_app">
+        <llm>true</llm>
+    </optimization>
+
+    <optimization name="heavy_load_app">
+        <boost rr="120" profile="boost2"/>
+    </optimization>
+
+    <optimization name="heavy_load_lite_app">
+        <boost profile="boost1"/>
+    </optimization>
+
+    <!-- recognized in-app modes, will merge with app opt at runtime -->
+    <optimization name="video_mode">
+        <default-rr>auto</default-rr>
+    </optimization>
+
+    <optimization name="video_fullscreen_mode">
+        <default-rr>video</default-rr>
+        <limit remove-tag="true"/>
+    </optimization>
+
+    <!-- global modes -->
+    <optimization name="charging_mode">
+        <thermal>6</thermal>
+    </optimization>
+
+    <optimization name="camera_mode">
+        <default-rr>60</default-rr>
+        <thermal>12</thermal>
+    </optimization>
+
+    <optimization name="bright_throttle_mode">
+        <limit temp="41" tempClr="39" brt-throttle="0:1000"/>
+        <limit temp="42" tempClr="40" brt-throttle="0:800"/>
+        <limit temp="43" tempClr="41" brt-throttle="0:600"/>
+        <limit temp="45" tempClr="43" brt-throttle="0:500"/>
+        <limit temp="47" tempClr="46" brt-throttle="0:300"/>
+        <limit temp="49" tempClr="47" brt-throttle="0:200"/>
+    </optimization>
+
+    <optimization name="com.sdu.didi.gsui" refs="rr_deep_limit_app"/>
+    <optimization name="com.ss.android.ugc.live" refs="rr_deep_limit_app"/>
+    <optimization name="com.motorola.cn.deskclock" refs="rr_deep_limit_app"/>
+    <optimization name="com.motorola.camera3" refs="rr_deep_limit_app"/>
+    <optimization name="com.tencent.wemeet.app" refs="rr_deep_limit_app"/>
+    <optimization name="cn.caocaokeji.dcdriver" refs="rr_deep_limit_app"/>
+    <optimization name="cn.caocaokeji.user" refs="rr_deep_limit_app"/>
+    <optimization name="com.google.android.deskclock" refs="rr_deep_limit_app"/>
+    <optimization name="com.amazon.flex.rabbit" refs="rr_deep_limit_app"/>
+    <optimization name="com.motorola.camera5" refs="camera_app"/>
+    <optimization name="com.google.android.gms" refs="rr_deep_limit_app"/>
+    <optimization name="com.ubercab.driver" refs="rr_deep_limit_app"/>
+    <optimization name="com.ubercab" refs="rr_deep_limit_app"/>
+    <optimization name="com.flashlight.bright.led.light" refs="rr_deep_limit_app"/>
+    <optimization name="com.motorola.ccc.ota" refs="rr_deep_limit_app"/>
+    <optimization name="com.google.android.calculator" refs="rr_deep_limit_app"/>
+    <optimization name="com.localaiapp.scoops" refs="rr_deep_limit_app"/>
+    <optimization name="com.tip.calculator.unit.converter.android" refs="rr_deep_limit_app"/>
+    <optimization name="com.clockhome.android.clock.alarm" refs="rr_deep_limit_app"/>
+    <optimization name="com.lyft.android.driver" refs="rr_deep_limit_app"/>
+    <optimization name="com.taboola.mip" refs="rr_deep_limit_app"/>
+    <optimization name="com.taxis99" refs="rr_deep_limit_app"/>
+    <optimization name="com.olacabs.oladriver" refs="rr_deep_limit_app"/>
+
+    <optimization name="com.google.android.apps.restore" refs="non_autorr_app"/>
+    <optimization name="com.android.cts.graphics.framerateoverride" refs="non_autorr_app"/>
+    <optimization name="android.display.cts" refs="non_autorr_app"/>
+    <optimization name="android.graphics.cts" refs="non_autorr_app"/>
+    <optimization name="android.view.cts" refs="non_autorr_app"/>
+    <optimization name="com.zui.browser" refs="non_autorr_app"/>
+    <optimization name="com.android.chrome" refs="non_autorr_app"/>
+    <optimization name="com.taobao.taobao" refs="non_autorr_app"/>
+    <optimization name="com.android.dialer" refs="non_autorr_app"/>
+    <optimization name="com.google.android.dialer" refs="non_autorr_app"/>
+    <optimization name="com.android.messaging" refs="non_autorr_app"/>
+    <optimization name="com.google.android.apps.messaging" refs="non_autorr_app"/>
+    <optimization name="com.android.phone" refs="non_autorr_app"/>
+    <optimization name="com.android.contacts" refs="non_autorr_app"/>
+
+    <optimization name="com.motorola.launcher3"/>
+    <optimization name="com.android.settings"/>
+
+    <optimization name="com.tencent.mm">
+        <supported-modes>video_mode, video_fullscreen_mode, camera_mode</supported-modes>
+        <default-rr>90</default-rr>
+        <llm>true</llm>
+    </optimization>
+
+</app-optimization>

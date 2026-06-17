@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exceptions>
+    <exception package="com.aura.oobe.cricket">
+            <permission name="android.permission.POST_NOTIFICATIONS" fixed="false" /> <!--Buganizer ID: 282052921-->
+    </exception>
+</exceptions>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2024 Motorola Mobility, Inc. All Rights Reserved -->
+<enable-disable-package>
+    <package-disable-enable-criteria
+        default_action="disable"
+        package="com.motorola.android.server.telecom.overlay.jp">
+        <criteria action="enable"
+            channel="docomo"/>
+        <criteria action="enable"
+            channel="kddi"/>
+        <criteria action="enable"
+            channel="rakuten"/>
+        <criteria action="enable"
+            channel="retjp"/>
+        <criteria action="enable"
+            channel="softbank"/>
+        <criteria action="enable"
+            channel="ymobile"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

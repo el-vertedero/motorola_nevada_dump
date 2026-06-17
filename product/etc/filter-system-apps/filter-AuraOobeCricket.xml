@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<filter-system-apps>
+    <module name="AuraOobeCricket" action="enable" prop="ro.carrier" value="cricket"/>
+</filter-system-apps>
+

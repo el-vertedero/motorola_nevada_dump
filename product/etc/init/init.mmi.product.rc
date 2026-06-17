@@ -1,0 +1,233 @@
+on early-init
+    # RAM boost 2.0
+    setprop ro.config.moto_swap_supported true
+    setprop ro.config.use_common_max_apps false
+    setprop ro.lmk.disable_reaper_update_cgroup 1
+
+on early-init
+    # Enlarge the extra free on booting stage because some drivers may alloc failed on big order.
+    setprop sys.sysctl.extra_free_kbytes_override 500000
+
+on property:sys.boot_completed=1
+    setprop sys.sysctl.extra_free_kbytes_override ""
+
+# common initialization
+on post-fs
+    # LMK
+    setprop ro.lmk.filecache_min_kb 300000
+    # LMK 3.0
+    setprop ro.lmk.always_bg_cpuset_threads kcompactd0
+    setprop ro.lmk.always_hfg_cpuset_threads system_server,surfaceflinger
+    setprop persist.lmk.debug true
+
+# Use LMK 3.1
+    setprop ro.lmk.use_moto_strategy true
+    setprop ro.lmk.psi_complete_stall_ms 250
+    setprop ro.lmk.psi_partial_stall_ms 50
+    setprop ro.lmk.file_high_percentage 70
+    setprop ro.lmk.file_low_percentage 25
+    setprop ro.lmk.swap_free_low_percentage 10
+    setprop ro.lmk.kill_heaviest_task true
+    setprop ro.lmk.kill_heaviest_ordered true
+    setprop ro.lmk.kill_timeout_ms 100
+    setprop ro.lmk.available_kill_limit 500
+
+# Ramboost 4.0
+    setprop persist.sys.ramboost_pro_full true
+# Psi strategy
+    setprop ro.lmk.stall_limit_critical 4
+    setprop ro.lmk.stall_limit_freeze 12
+    setprop ro.lmk.medium_min_adj 920
+    setprop ro.lmk.critical_min_adj 201
+    setprop ro.lmk.freeze_min_adj 0
+# Kswapd strategy
+    setprop ro.lmk.kswapd_limit 90
+    setprop ro.lmk.kswapd_limit_decay 10
+    setprop ro.lmk.kswapd_min_adj 251
+    setprop ro.lmk.kswapd_boost_limit 1
+# Thrashing strategy
+    setprop ro.lmk.thrashing_limit 50
+    setprop ro.lmk.thrashing_limit_critical 50
+    setprop ro.lmk.thrashing_limit_decay 25
+    setprop ro.lmk.min_thrashing_limit 10
+# use psi avg10 for mempressure in fwk to avoid ping-pong.
+    setprop ro.config.use_psi_avg10_for_mempressure true
+# delay longer for service restart, will be rescheduled immediately once mempressure backing to normal.
+    setprop ro.config.svc_restart_delay_on_moderate_mem 60000
+    setprop ro.config.svc_restart_delay_on_low_mem 3600000
+    setprop ro.config.svc_restart_delay_on_critical_mem 3600000
+    # App compactor
+    setprop ro.config.use_compaction true
+    setprop ro.config.compact_action_2 2
+    setprop ro.config.compact_bootcompleted true
+    # LowMemoryDetector of Framework
+    setprop ro.lowmemdetector.psi_low_stall_us 50000
+    setprop ro.lowmemdetector.psi_medium_stall_us 150000
+    setprop ro.lowmemdetector.psi_high_stall_us 200000
+    # Disable Process pool
+    setprop persist.device_config.runtime_native.usap_pool_enabled false
+    # Enable freezer
+    setprop ro.config.use_freezer true
+    # Enable moto freezer
+    setprop ro.config.smart_freezer_enabled true
+    # moto screen off dexopt
+    setprop persist.sys.screenoff_dexopt true
+    # moto io psi critical threshold
+    setprop persist.sys.psiio_critical_threshold 60
+
+    # moto: enable MTK performance framework
+    setprop persist.sys.perf_fwk_enabled true
+    setprop persist.sys.allow_aosp_hints true
+    setprop persist.sys.ams_ext_enabled true
+    setprop persist.sys.ams_mtk_game true
+
+    setprop ro.config.no_kill_duration_post_boot 0
+    # Dalvik configuration
+    setprop dalvik.vm.dex2oat-threads 6
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5
+    setprop persist.sys.install.dex2oat-threads 6
+    setprop persist.sys.install.dex2oat-cpu-set 1,2,3,4,5,6
+    # ANR timeout time config
+    setprop persist.sys.dispatch_timeout_multiplier 2
+    setprop persist.sys.service_timeout 40000
+    setprop persist.sys.service_bg_timeout 400000
+    setprop persist.sys.broadcast_fg_timeout 20000
+    setprop persist.sys.broadcast_bg_timeout 120000
+    setprop persist.sys.bind_timeout 36000
+    # Cpuset for boost
+    write /dev/cpuset/boost-app/cpus 1-7
+    setprop debug.sf.boost_sf_on_touch true
+    setprop debug.sf.boost_affinity 0xc0
+    setprop vendor.debug.sf.cpupolicy 0
+    #Disable MTK INTERACTION boost, use moto boost instead
+    setprop persist.sys.moto_boost_enabled true
+    # enable thermal break on MTK platform
+    setprop vendor.sys.mtk_dynamic_boost 1
+    setprop persist.sys.mtk_dynamic_boost 1
+
+    # moto: enable resource cache
+    setprop persist.sys.resourcecache.enabled true
+
+    #OverScroller
+    setprop ro.config.use_moto_scroller false
+    #gallery ralate to camera
+    setprop persist.sys.fw.gallery_related_to_camera true
+    #moto sched
+    setprop persist.sys.sched_booster_enabled true
+    setprop persist.sys.sched_booster_config 0x3d
+    setprop persist.sys.sched_booster_low_systemlock true
+    setprop ro.config.boost_video_mode true
+
+    #moto weather widget memory saving mode
+    setprop ro.config.weather_widget_lite true
+
+    # max starting in bg, can be 1 in low ram device.
+    setprop ro.config.max_starting_bg 8
+    # use psi avg10 for mempressure in fwk to avoid ping-pong.
+    setprop ro.config.use_psi_avg10_for_mempressure true
+    # delay longer for service restart, will be rescheduled immediately once mempressure backing to normal.
+    setprop ro.config.svc_restart_delay_on_moderate_mem 60000
+    setprop ro.config.svc_restart_delay_on_low_mem 3600000
+    setprop ro.config.svc_restart_delay_on_critical_mem 3600000
+    # drop cache for camera
+    setprop vendor.cam3dev.dropcache.enable true
+    # enable perf checkin
+    setprop persist.sys.moto_perf_monitor true
+    # perf checkin data
+    setprop persist.sys.psicpu 10,20,40,60,80,100
+    setprop persist.sys.psiio 2,4,6,8,10,20,100
+    setprop persist.sys.psimem 2,4,6,8,10,20,100
+    setprop persist.sys.cputmp 41,42,43,44,45,46,47,100
+    setprop persist.sys.cpuiow 5,10,20,30,40,60,100
+    setprop persist.sys.cpubsy 5,10,20,40,60,80,100
+    setprop persist.sys.cpupolicy -1,6,0
+    setprop persist.sys.cpu_thermal thermal_zone44
+
+    setprop ro.config.blur_effects_level 0
+    setprop ro.config.sysui_animation_level 0
+
+#Reinit lmkd to reconfigure lmkd propertise
+on property:sys.boot_completed=1
+    setprop lmkd.reinit 1
+
+
+on property:sys.boot_completed=1
+    write /dev/cpuset/top-app/cpus 0-7
+    # Cpuset for foreground apps
+    # do not change to 0-5, CTS failed on IKSWT-32275
+    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/h-foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/h-background/cpus 0-6
+    write /dev/cpuset/restricted/cpus 0-3
+
+on property:sys.boot_completed=1 && property:ro.vendor.zram.product_swapon=true
+    trigger sys-boot-completed-set
+
+on sys-boot-completed-set && property:persist.sys.zram_wb_enabled=false
+    swapon_all /vendor/etc/fstab.enablezram
+on sys-boot-completed-set && property:persist.sys.zram_wb_enabled=true
+    swapon_all /vendor/etc/fstab.enablezramwb
+
+on post-fs && property:ro.vendor.hw.ram=4GB
+    setprop ro.config.moto_mid_ram true
+
+on property:ro.product.cpu.abi=arm64-v8a
+    setprop dalvik.vm.dex2oat64.enabled true
+
+on  post-fs && property:ro.vendor.hw.ram=4GB
+    setprop dalvik.vm.heapstartsize 8m
+    setprop dalvik.vm.heapgrowthlimit 256m
+    setprop dalvik.vm.heapsize 512m
+    setprop dalvik.vm.heaptargetutilization 0.75
+    setprop dalvik.vm.heapminfree 512k
+    setprop dalvik.vm.heapmaxfree 8m
+    setprop ro.config.compact_action_1 2
+    setprop ro.config.compact_post_boot true
+    setprop ro.lmk.stall_limit_medium 0
+    setprop ro.lmk.kill_heaviest_ordered true
+    #setprop persist.sys.aitune_audio_monitor true
+    #setprop persist.sys.aitune_audio_monitor_adj 51
+    setprop ro.config.smart_mm_enabled true
+    setprop ro.config.smart_mm_total_cpu_limit 200
+    # do not pin dex files
+    setprop ro.config.donot_pin_dex true
+    setprop ro.MAX_HIDDEN_APPS 48
+on  post-fs && property:ro.vendor.hw.ram=6GB
+    setprop dalvik.vm.heapstartsize 12m
+    setprop dalvik.vm.heapgrowthlimit 256m
+    setprop dalvik.vm.heapsize 512m
+    setprop dalvik.vm.heaptargetutilization 0.5
+    setprop dalvik.vm.heapminfree 6m
+    setprop dalvik.vm.heapmaxfree 24m
+    setprop ro.config.compact_action_1 4
+    setprop ro.lmk.stall_limit_medium 1
+    setprop ro.config.compact_post_boot false
+on  post-fs && property:ro.vendor.hw.ram=8GB
+    setprop dalvik.vm.heapstartsize 16m
+    setprop dalvik.vm.heapgrowthlimit 256m
+    setprop dalvik.vm.heapsize 512m
+    setprop dalvik.vm.heaptargetutilization 0.5
+    setprop dalvik.vm.heapminfree 8m
+    setprop dalvik.vm.heapmaxfree 32m
+    setprop ro.config.compact_action_1 4
+    setprop ro.lmk.stall_limit_medium 1
+    setprop ro.config.compact_post_boot false
+on  post-fs && property:ro.vendor.hw.ram=12GB
+    setprop dalvik.vm.heapstartsize 16m
+    setprop dalvik.vm.heapgrowthlimit 256m
+    setprop dalvik.vm.heapsize 512m
+    setprop dalvik.vm.heaptargetutilization 0.5
+    setprop dalvik.vm.heapminfree 8m
+    setprop dalvik.vm.heapmaxfree 32m
+    setprop ro.config.compact_action_1 4
+    setprop ro.lmk.stall_limit_medium 1
+    setprop ro.config.compact_post_boot false
+
+on boot
+    #le scan interval & window downgrade
+    setprop persist.mot_bt.le_scan_interval_downgrade true
+
+on property:ro.product.is_production=false
+    setprop log.tag.debugtouch D
+    setprop log.tag.debugkey D

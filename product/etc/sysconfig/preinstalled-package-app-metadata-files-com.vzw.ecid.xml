@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <config>
+        <asl-file package="com.vzw.ecid" path="/product/etc/asl/asl-com.vzw.ecid.xml"/>
+    </config>

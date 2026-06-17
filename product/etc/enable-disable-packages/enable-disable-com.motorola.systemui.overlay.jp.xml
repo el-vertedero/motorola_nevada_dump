@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.motorola.systemui.overlay.jp" carrierBased="true" default_action="disable">
+        <criteria action="enable" channel="retjp" />
+        <criteria action="enable" channel="softbank" />
+        <criteria action="enable" channel="ymobile" />
+        <criteria action="enable" channel="docomo" />
+        <criteria action="enable" channel="kddi" />
+        <criteria action="enable" channel="rakuten" />
+    </package-disable-enable-criteria>
+</enable-disable-package>

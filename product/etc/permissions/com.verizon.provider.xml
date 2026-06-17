@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.verizon.provider"
+        file="/product/framework/com.verizon.provider.jar"
+    />
+</permissions>

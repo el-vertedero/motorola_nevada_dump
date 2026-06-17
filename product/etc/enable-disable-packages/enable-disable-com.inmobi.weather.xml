@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.inmobi.weather" carrierBased="true" default_action="disable" version="1">
+        <criteria action="disable" business_edition="1"/>
+        <criteria action="enable" channel="retus"/>
+        <criteria action="enable" channel="retca"/>
+        <criteria action="enable" channel="retbr"/>
+        <criteria action="enable" channel="openmx"/>
+        <criteria action="enable" channel="retar"/>
+        <criteria action="enable" channel="reteu"/>
+        <criteria action="enable" channel="retgb"/>
+        <criteria action="enable" channel="spectrum"/>
+        <criteria action="enable" channel="fi"/>
+        <criteria action="enable" channel="comcast"/>
+        <criteria action="enable" channel="cc"/>
+        <criteria action="enable" channel="boost"/>
+        <criteria action="enable" channel="usc"/>
+        <criteria action="enable" channel="tmo"/>
+        <criteria action="enable" channel="cricket"/>
+        <criteria action="enable" channel="attpre"/>
+        <criteria action="enable" channel="att"/>
+        <criteria action="enable" channel="attmx"/>
+        <criteria action="enable" channel="altmx"/>
+        <criteria action="enable" channel="tefmx"/>
+        <criteria action="enable" channel="retin"/>
+        <criteria action="enable" channel="retjio"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

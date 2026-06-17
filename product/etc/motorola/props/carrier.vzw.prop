@@ -1,0 +1,7 @@
+#for UCE
+#no need set SR system property for MTK chipset.
+persist.rcs.supported=1
+persist.vendor.mtk_rcs_ua_support=1
+persist.vendor.mtk_uce_support=1
+ro.mot.enable_android.hardware.telephony.ims.singlereg=true
+
