@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<filter-system-apps>
+    <module name="ModemDiagnosticsLocationPermission" action="enable" prop="ro.carrier" value="vzw;att;tmo;sprint;repw;attpre;cricket;
+            cc;usc;tracfone;retus;metropcs;dmc;bby;amz;acg;lra;comcast;fi;vzwpre;boost;spectrum"/>
+</filter-system-apps>

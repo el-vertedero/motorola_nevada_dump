@@ -1,0 +1,22 @@
+
+##set persist.nfc_vendor_extn.lib_file_name
+on property:ro.vendor.hw.nfc=nq
+   setprop persist.nfc_vendor_extn.lib_file_name libnfc_vendor_extn-nxp.so
+   setprop persist.nfc_cfg.config_file_name libnfc-nci-nxp.conf
+   setprop ro.vendor.hw.nfc.vendor nxp
+
+on property:ro.vendor.hw.nfc=ese_nq
+   setprop persist.nfc_vendor_extn.lib_file_name libnfc_vendor_extn-nxp.so
+   setprop persist.nfc_cfg.config_file_name libnfc-nci-nxp.conf
+   setprop ro.vendor.hw.nfc.vendor nxp
+
+on property:ro.vendor.hw.nfc=nxp
+   setprop persist.nfc_vendor_extn.lib_file_name libnfc_vendor_extn-nxp.so
+   setprop persist.nfc_cfg.config_file_name libnfc-nci-nxp.conf
+   setprop ro.vendor.hw.nfc.vendor nxp
+
+on property:ro.vendor.hw.nfc=ese_nxp
+   setprop persist.nfc_vendor_extn.lib_file_name libnfc_vendor_extn-nxp.so
+   setprop persist.nfc_cfg.config_file_name libnfc-nci-nxp.conf
+   setprop ro.vendor.hw.nfc.vendor nxp
+
