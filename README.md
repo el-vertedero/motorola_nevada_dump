@@ -1,0 +1,14 @@
+# user 16 W1WNS36.18-114-1 fbc0d release-keys
+- manufacturer: motorola
+- platform: common
+- codename: nevada
+- flavor: user
+- release: 16
+- id: W1WNS36.18-114-1
+- incremental: fbc0d
+- tags: release-keys
+- fingerprint: motorola/nevada_g_hal/nevada:13/W1WNS36.18-114-1/fbc0d:user/release-keys
+- is_ab: true
+- brand: motorola
+- branch: user-16-W1WNS36.18-114-1-fbc0d-release-keys
+- repo: motorola_nevada_dump
