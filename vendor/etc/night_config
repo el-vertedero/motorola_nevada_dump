@@ -1,0 +1,51 @@
+{
+  //                   back-nevada      |   back-nevada  | front-nevada  | back-utah | front-utah
+  "imagers" :     [ "mot_nevada_s5kkd1_mipi_raw",  "mot_nevada_s5kkds_mipi_raw", "mot_nevada_ov08f_mipi_raw", "mot_nevada_ov50d_mipi_raw", "mot_nevada_s5kkds_fm_mipi_raw"],
+  "camera-type" : [ "back-main",   "back-main","front-main" ,"back-main" , "front-main"],
+  "mfnr-night" : {
+    "params-dynamic" : [
+         { // default
+           "lux-upper" :          [ 20.0,       20.0,       20.0,       20.0,    20.0],
+           "lux-lower" :          [ 0.0,        0.0,        0.0,        0.0,     0.0 ],
+           "normal-ev" :          [ 0,          0,          0,          0,       0   ],
+           "ev-exp-time" :        [ 0,          0,          0,          0,       0   ]
+         },
+         { // 1st
+           "lux-upper" :          [ 0.8,        0.8,        0.8,        0.8,     0.8 ],
+           "lux-lower" :          [ 0,          0,          0,          0,       0   ],
+           "normal-ev" :          [ 4,          4,          4,          4,       4   ],
+           "ev-exp-time" :        [ 144,        144,        125,        144,     125 ]
+         },
+         { // 2th
+          "lux-upper" :           [ 3.0,        3.0,        3.0,        3.0,     3.0 ],
+          "lux-lower" :           [ 0.8,        0.8,        0.8,        0.8,     0.8 ],
+          "normal-ev" :           [ 3,          3,          3,          3,       3   ],
+          "ev-exp-time" :         [ 144,        103,        125,        144,     125 ]
+        },
+         { // 3st
+           "lux-upper" :          [ 5.0,        5.0,        5.0,        5.0,     5.0 ],
+           "lux-lower" :          [ 3.0,        3.0,        3.0,        3.0,     3.0 ],
+           "normal-ev" :          [ 3,          3,          6,          3,       3],
+           "ev-exp-time" :        [ 140,        140,        100,        140,     100 ]
+         },
+         { // 4nd
+           "lux-upper" :          [ 15.0,       15.0,       15.0,       15.0,    15.0],
+           "lux-lower" :          [ 5.0,        5.0,        5.0,        5.0,     5.0 ],
+           "normal-ev" :          [ 2,          2,          2,          2,       2   ],
+           "ev-exp-time" :        [ 120,        120,        86,         120,     86  ]
+         },
+         { // 5rd
+           "lux-upper" :          [ 20.0,       20.0,       20.0,       20.0,    20.0],
+           "lux-lower" :          [ 15.0,       15.0,       15.0,       15.0,    15.0],
+           "normal-ev" :          [ 2,          2,          2,          2,       2   ],
+           "ev-exp-time" :        [ 100,        100,        66,        100,      66  ]
+         },
+         { // 6th
+           "lux-upper" :          [ 50.0,      50.0,        50.0,       50.0,    50.0],
+           "lux-lower" :          [ 20.0,      20.0,        20.0,       20.0,    20.0],
+           "normal-ev" :          [ 1,         1,           0,          1,       1   ],
+           "ev-exp-time" :        [ 83,        83,          50,         83,      50  ]
+         }
+   ]
+  }
+}
