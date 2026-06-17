@@ -1,0 +1,64 @@
+<xml>
+    <ctbk_version>36</ctbk_version>
+
+    <!-- Config wifi power table in file txpowerctrl.cfg -->
+
+    <sar_sensors>
+        <sensor type="prox_front"           index="0">stk3a5x_ps</sensor>
+        <sensor type="prox_back"            index="1">null</sensor>
+        <!--from back view-->
+        <sensor type="cap_bottom_left"      index="2">Moto CapSense Ch0</sensor>  <!--CS0 / ANT0-->
+        <sensor type="cap_bottom_right"     index="3">Moto CapSense Ch2</sensor>  <!--CS2 / ANT1-->
+        <sensor type="cap_top_right"        index="4">Moto CapSense Ch3</sensor>  <!--CS4 / ANT4-->
+        <sensor type="cap_top_middle"       index="5">Moto CapSense Ch1</sensor>  <!--CS7 / ANT5-->
+        <sensor type="cap_top_left"         index="6">Moto CapSense Ch4</sensor>  <!--CS5 / ANT6-->
+    </sar_sensors>
+
+    <!--OB5 config: 00000101b (cap_bottom_left|cap_top_right)-->
+    <ob5_sensor_config indexBits="00101"/>
+
+    <!--Wifi TX0 config: 00010000b (cap_top_left)-->
+    <wifi_tx0_sensor_config indexBits="10000"/>
+
+    <wifi_dbs_feature_support>false</wifi_dbs_feature_support>
+
+    <fcc_ce_seperate_support>true</fcc_ce_seperate_support>
+
+    <fcc_country_mcc_list>310,311,312,313,314,315,316,722,716,730,732,330,736,404,405,450</fcc_country_mcc_list>
+
+    <ised_ce_seperate_support>true</ised_ce_seperate_support>
+
+    <ised_country_mcc_list>302</ised_country_mcc_list>
+
+    <!--Modem TX0 config-->
+    <mdm_tx0_sensor_config indexBits="01111">
+        <support_lte_sensor_map>false</support_lte_sensor_map>
+        <lte_sensor_map>
+            <!--attribute lteBand: the lte band, "default" or "0" for other bands not specified out-->
+            <!--attribute indexBits: the index bit set of cap sensor used for the specified lte band-->
+            <lte_tx0_sensor lteBand="default"   indexBits="00000"/>
+        </lte_sensor_map>
+
+        <support_sensor_dsi_map>true</support_sensor_dsi_map>
+        <sensor_dsi_map>
+            <!--attribute indexBits: the index bit set of cap sensors, "default" or "0" for the default dsi-->
+            <!--attribute dsi: the DSI state triggerd by the cap sensors in index bit set-->
+            <dsi_tx0_sensors indexBits="default"    dsi="10"/>
+            <dsi_tx0_sensors indexBits="01011"      dsi="20"/>
+            <dsi_tx0_sensors indexBits="01110"      dsi="15"/>
+            <dsi_tx0_sensors indexBits="00011"      dsi="14"/>
+            <dsi_tx0_sensors indexBits="01001"      dsi="16"/>
+            <dsi_tx0_sensors indexBits="00110"      dsi="17"/>
+            <dsi_tx0_sensors indexBits="01010"      dsi="18"/>
+            <dsi_tx0_sensors indexBits="01100"      dsi="19"/>
+            <dsi_tx0_sensors indexBits="01000"      dsi="13"/>
+            <dsi_tx0_sensors indexBits="00100"      dsi="12"/>
+            <dsi_tx0_sensors indexBits="00010"      dsi="11"/>
+            <dsi_tx0_sensors indexBits="00001"      dsi="10"/>
+        </sensor_dsi_map>
+    </mdm_tx0_sensor_config>
+
+    <mdm_tuner_handheld_support>true</mdm_tuner_handheld_support>
+    <!--Tuner handheld sensor config: 00011b (cap_bottom_left | cap_bottom_right))-->
+    <mdm_tuner_handheld_sensor_config indexBits="00011"/>
+</xml>

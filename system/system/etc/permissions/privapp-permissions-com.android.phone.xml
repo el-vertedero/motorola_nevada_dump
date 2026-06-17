@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<permissions>
+    <privapp-permissions package="com.android.phone">
+        <!-- Begin Motorola, lucasjdo, IKSWW-4817 FEATURE-9549 -->
+        <permission name="diagandroid.phone.receiveDetailedCallState" />
+        <!-- End, IKSWW-4817 FEATURE-9549 -->
+
+        <!-- Begin Motorola, alisson, IKSWW-97 FEATURE-8941 -->
+        <permission name="com.tmobile.oem.echolocate.system.provider.messagestats.ConversationsContentProvider.READ_MMS_SMS_CONVERSATIONS" />
+        <permission name="com.tmobile.oem.echolocate.system.provider.messagestats.ConversationsContentProvider.WRITE_MMS_SMS_CONVERSATIONS" />
+        <permission name="com.tmobile.oem.echolocate.system.provider.messagestats.PendingMessagesContentProvider.READ_MMS_SMS_PENDING" />
+        <permission name="com.tmobile.oem.echolocate.system.provider.messagestats.PendingMessagesContentProvider.WRITE_MMS_SMS_PENDING" />
+        <permission name="com.tmobile.oem.echolocate.system.provider.backgroundstats.RadioContentProvider.READ_RADIO_STATS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.backgroundstats.RadioContentProvider.WRITE_RADIO_STATS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.backgroundstats.ImsContentProvider.READ_IMS_STATS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.backgroundstats.ImsContentProvider.WRITE_IMS_STATS"/>
+        <!-- End IKSWW-97 FEATURE-8941 -->
+    </privapp-permissions>
+</permissions>

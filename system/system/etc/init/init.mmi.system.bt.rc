@@ -1,0 +1,15 @@
+on property:persist.log.tag.bluetooth=verbose
+    setprop persist.mot_bt.dbg_snoopsize 150
+
+on property:persist.log.tag.bluetooth=debug
+    setprop persist.mot_bt.dbg_snoopsize 20
+
+on property:persist.log.tag.bluetooth=warning
+    setprop persist.mot_bt.dbg_snoopsize 20
+
+on property:persist.log.tag.bluetooth=info
+    setprop persist.mot_bt.dbg_snoopsize 20
+
+on property:persist.log.tag.bluetooth=error
+    setprop persist.mot_bt.dbg_snoopsize 20
+

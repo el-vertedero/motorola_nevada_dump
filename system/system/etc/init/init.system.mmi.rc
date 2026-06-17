@@ -1,0 +1,99 @@
+service setup_shutdown /system/bin/setup_shutdown.sh
+    class late_start
+    user system
+    oneshot
+
+on property:persist.sys.setup.shutdown=1
+    stop setup_shutdown
+
+on property:persist.sys.setup.shutdown=2
+    start setup_shutdown
+
+service move_elabel_data /system/bin/move_elabel_data.sh
+    class late_start
+    user system
+    group system
+    oneshot
+
+#ufs FFU
+service ufs_ffu_device /system/bin/ufs_ffu_device.sh
+    user root
+    class core
+    oneshot
+    disabled
+
+on early-boot
+    write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"
+    write /proc/sys/kernel/core_pattern "/data/app_dump/%e_%p_%t.core.gz"
+
+#ufs FFU
+on post-fs
+    exec_start ufs_ffu_device
+
+on post-fs-data
+
+    # OTA Package directory
+    mkdir /data/misc_ne 0770 system cache
+    # Give system permission to dhcp
+    mkdir /data/misc/dhcp 0750 dhcp system
+
+    # directory to place factory regulatory data
+    mkdir /data/misc/elabel 0755 system system
+
+    # Store setup_shutdown.sh disabled flag
+    mkdir /data/misc/setupcheck 0755 system system
+
+on post-fs-data && property:ro.product.first_api_level=33
+    setprop ro.product.model_for_attestation ${ro.product.model}
+    setprop ro.product.brand_for_attestation ${ro.product.brand}
+    setprop ro.product.name_for_attestation ${ro.product.name}
+
+on post-fs-data && property:ro.product.first_api_level=32
+    setprop ro.product.model_for_attestation ${ro.product.model}
+    setprop ro.product.brand_for_attestation ${ro.product.brand}
+    setprop ro.product.name_for_attestation ${ro.product.name}
+
+on post-fs-data && property:ro.product.first_api_level=31
+    setprop ro.product.model_for_attestation ${ro.product.model}
+    setprop ro.product.brand_for_attestation ${ro.product.brand}
+    setprop ro.product.name_for_attestation ${ro.product.name}
+
+on post-fs-data && property:ro.vendor.mot.base_buildid=*
+    setprop ro.build.version.base_os "${ro.product.brand}/${ro.product.name}/${ro.product.device}:${ro.build.version.release}/${ro.vendor.mot.base_buildid}:${ro.build.type}/${ro.build.tags}"
+
+on init && property:ro.boot.revision=*
+    setprop ro.boot.hardware.revision ${ro.boot.revision}
+
+on property:ro.carrier=*
+    setprop ro.oem.key1 ${ro.carrier}
+
+on property:ro.vendor.hw.frontcolor=*
+    setprop ro.boot.hardware.color ${ro.vendor.hw.frontcolor}
+
+on init && property:ro.vendor.hw.profile=*
+    setprop ro.mot.hardware.profile ${ro.vendor.hw.profile}
+
+on init && property:ro.vendor.product.profile=*
+    setprop ro.mot.hardware.profile ${ro.vendor.product.profile}
+
+# Special case to exempt from the GMS RKP requirement:
+# [GMS-9.5-001.004] MUST NOT provision Google-provided attestation keys in the factory.
+# PRC products are not able to connect with the Google backend, so we will still provision
+# the legacy attestation keys, which has been approved by Android team.
+on boot && property:ro.product.is_prc=true
+    setprop remote_provisioning.tee.rkp_only 0
+    setprop remote_provisioning.strongbox.rkp_only 0
+
+# Userdebug variant is not a candidate to support RKP
+# We should relax the RKP only requirement so as to
+# provision our factory attestation keys(dummy key)
+on boot && property:ro.build.type=userdebug
+    setprop remote_provisioning.tee.rkp_only 0
+    setprop remote_provisioning.strongbox.rkp_only 0
+
+# We will have non-secure hw + user sw for DF, so
+# relax the RKP only requirement for non-secure hw,
+# then it can fallback to use moto dummy key
+on boot && property:ro.boot.secure_hardware=0
+   setprop remote_provisioning.tee.rkp_only 0
+   setprop remote_provisioning.strongbox.rkp_only 0
